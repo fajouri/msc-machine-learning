@@ -5,9 +5,11 @@ Course production workspace for Ascencia Malta MSc Computer Science, MQF Level 7
 **Status:** Planning; no teaching materials generated yet.
 
 - 16 × 3-hour sessions; provisional delivery: 9 synchronous online, 7 campus labs.
-- Approved descriptor: 50 contact hours, 160 self-study hours, 40 assessment hours. **Open discrepancy:** 16 × 3 = 48 scheduled hours.
+- Approved descriptor: 50 contact hours, 160 self-study hours, 40 assessment hours. SETUP-01 reconciles 48 teaching hours plus a separate two-hour university-administered certification exam; no lecturer deliverable is required for those two hours.
 - Assessments: written examination 60%, Kaggle capstone 30%, presentation 10%.
 - LO1–LO8 govern all teaching artifacts.
+
+See the [curriculum data model and proposed workload allocation](curriculum/README.md) for the 250-hour accounting, source provenance, validation commands and pending academic decisions.
 
 ## Production workflow
 
