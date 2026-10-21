@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "issue": 8,
+  "audience": "public_student",
+  "approval": "pending_professor_review",
+  "session_id": "S01",
+  "session_title": "ML foundations and Python stack",
+  "mode": "online",
+  "learning_outcomes": [
+    "LO1"
+  ],
+  "framing": {
+    "prerequisites": "TODO: prerequisites for the selected session.",
+    "notation": "TODO: notation for the selected session.",
+    "methodological_comparison": "TODO: methodological comparison for the selected session.",
+    "reproducibility": "TODO: reproducibility for the selected session.",
+    "ethical_evaluation": "TODO: ethical evaluation for the selected session.",
+    "independent_practice": "TODO: independent practice for the selected session.",
+    "reading_plan": "TODO: reading plan for the selected session."
+  },
+  "slides": [
+    {
+      "id": "SL01",
+      "type": "opening",
+      "title": "TODO: Opening",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Establish the session problem and scope.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL02",
+      "type": "outcomes",
+      "title": "TODO: Outcomes",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Map the session to exact approved LO wording.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL03",
+      "type": "concept",
+      "title": "TODO: Concept",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Explain a concept, its assumptions and a counterexample.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL04",
+      "type": "equation",
+      "title": "TODO: Equation",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Develop notation and mathematical reasoning with interpretation.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [
+        {
+          "latex": "TODO: latex.",
+          "spoken_form": "TODO: spoken form.",
+          "symbols_and_dimensions": "TODO: symbols and dimensions.",
+          "assumptions": "TODO: assumptions.",
+          "derivation": "TODO: derivation.",
+          "interpretation": "TODO: interpretation.",
+          "limitations": "TODO: limitations."
+        }
+      ],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL05",
+      "type": "comparison",
+      "title": "TODO: Comparison",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Compare methods under explicit criteria and assumptions.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL06",
+      "type": "worked_example",
+      "title": "TODO: Worked Example",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Show an original teaching example separate from independent tasks.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL07",
+      "type": "figure",
+      "title": "TODO: Figure",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Interpret reproducible evidence with an editable figure.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [
+        {
+          "id": "FIG01",
+          "origin": "original",
+          "source_id": "original",
+          "editable_form": "native_chart",
+          "data_and_reproduction": "TODO: Record synthetic data, script, seed, versions, units and uncertainty.",
+          "caption": "TODO: Describe result and limits.",
+          "alt_text": "TODO: Explain the message and relevant values.",
+          "reading_order": "TODO: Title, axes, series, legend, caption.",
+          "non_colour_encoding": "TODO: Use markers and line patterns as well as colour."
+        }
+      ],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL08",
+      "type": "activity",
+      "title": "TODO: Activity",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Set an ungraded task with online and campus participation routes.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL09",
+      "type": "synthesis",
+      "title": "TODO: Synthesis",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Connect evidence, limitations and the session outcomes.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    },
+    {
+      "id": "SL10",
+      "type": "references",
+      "title": "TODO: References",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "purpose": "Provide verified references and exact locators.",
+      "body": [
+        "TODO: Write concise visible content with substantive explanations in public notes."
+      ],
+      "equations": [],
+      "figures": [],
+      "citations": [],
+      "notes": {
+        "explanation": "TODO: explanation.",
+        "reasoning": "TODO: reasoning.",
+        "timing": "TODO: timing.",
+        "participation_online": "TODO: participation online.",
+        "participation_campus": "TODO: participation campus.",
+        "fallback": "TODO: fallback.",
+        "transition": "TODO: transition."
+      }
+    }
+  ]
+}

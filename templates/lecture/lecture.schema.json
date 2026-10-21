@@ -1,0 +1,324 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "issue": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "audience": {
+      "type": "string",
+      "const": "public_student"
+    },
+    "approval": {
+      "type": "string",
+      "const": "pending_professor_review"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^S(0[1-9]|1[0-6])$"
+    },
+    "session_title": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "online",
+        "campus"
+      ]
+    },
+    "learning_outcomes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^LO[1-8]$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "framing": {
+      "type": "object",
+      "properties": {
+        "prerequisites": {
+          "type": "string"
+        },
+        "notation": {
+          "type": "string"
+        },
+        "methodological_comparison": {
+          "type": "string"
+        },
+        "reproducibility": {
+          "type": "string"
+        },
+        "ethical_evaluation": {
+          "type": "string"
+        },
+        "independent_practice": {
+          "type": "string"
+        },
+        "reading_plan": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "prerequisites",
+        "notation",
+        "methodological_comparison",
+        "reproducibility",
+        "ethical_evaluation",
+        "independent_practice",
+        "reading_plan"
+      ],
+      "additionalProperties": false
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^SL[0-9]{2,3}$"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "opening",
+              "outcomes",
+              "concept",
+              "equation",
+              "comparison",
+              "worked_example",
+              "figure",
+              "activity",
+              "synthesis",
+              "references"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "learning_outcomes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^LO[1-8]$"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": false
+          },
+          "equations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "latex": {
+                  "type": "string"
+                },
+                "spoken_form": {
+                  "type": "string"
+                },
+                "symbols_and_dimensions": {
+                  "type": "string"
+                },
+                "assumptions": {
+                  "type": "string"
+                },
+                "derivation": {
+                  "type": "string"
+                },
+                "interpretation": {
+                  "type": "string"
+                },
+                "limitations": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "latex",
+                "spoken_form",
+                "symbols_and_dimensions",
+                "assumptions",
+                "derivation",
+                "interpretation",
+                "limitations"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "uniqueItems": false
+          },
+          "figures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "origin": {
+                  "type": "string",
+                  "enum": [
+                    "original",
+                    "third_party"
+                  ]
+                },
+                "source_id": {
+                  "type": "string"
+                },
+                "editable_form": {
+                  "type": "string",
+                  "enum": [
+                    "native_chart",
+                    "native_shapes",
+                    "native_table"
+                  ]
+                },
+                "data_and_reproduction": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "alt_text": {
+                  "type": "string"
+                },
+                "reading_order": {
+                  "type": "string"
+                },
+                "non_colour_encoding": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "origin",
+                "source_id",
+                "editable_form",
+                "data_and_reproduction",
+                "caption",
+                "alt_text",
+                "reading_order",
+                "non_colour_encoding"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "uniqueItems": false
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "artifact": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": "string"
+                },
+                "attribution": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "source_id",
+                "artifact",
+                "locator",
+                "attribution"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 0,
+            "uniqueItems": false
+          },
+          "notes": {
+            "type": "object",
+            "properties": {
+              "explanation": {
+                "type": "string"
+              },
+              "reasoning": {
+                "type": "string"
+              },
+              "timing": {
+                "type": "string"
+              },
+              "participation_online": {
+                "type": "string"
+              },
+              "participation_campus": {
+                "type": "string"
+              },
+              "fallback": {
+                "type": "string"
+              },
+              "transition": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "explanation",
+              "reasoning",
+              "timing",
+              "participation_online",
+              "participation_campus",
+              "fallback",
+              "transition"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "title",
+          "learning_outcomes",
+          "purpose",
+          "body",
+          "equations",
+          "figures",
+          "citations",
+          "notes"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "uniqueItems": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "issue",
+    "audience",
+    "approval",
+    "session_id",
+    "session_title",
+    "mode",
+    "learning_outcomes",
+    "framing",
+    "slides"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M5 lecture source contract version 1"
+}

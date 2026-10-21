@@ -1,0 +1,35 @@
+name: M5 lecture source contracts
+
+on:
+  pull_request:
+    paths:
+      - 'templates/lecture/**'
+      - 'tests/test_lecture_templates.py'
+      - 'curriculum/**'
+      - 'references/**'
+      - '.github/workflows/lecture-templates.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'templates/lecture/**'
+      - 'tests/test_lecture_templates.py'
+      - 'curriculum/**'
+      - 'references/**'
+      - '.github/workflows/lecture-templates.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -s templates/lecture/validate.py
+      - run: python -s -m unittest discover -s tests -p 'test_lecture_templates.py' -v

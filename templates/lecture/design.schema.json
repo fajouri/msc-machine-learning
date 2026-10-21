@@ -1,0 +1,145 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "status": {
+      "type": "string",
+      "const": "proposed_pending_professor_review"
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "const": "16:9"
+    },
+    "width_inches": {
+      "type": "string",
+      "const": "13.333333"
+    },
+    "height_inches": {
+      "type": "string",
+      "const": "7.5"
+    },
+    "safe_margin_inches": {
+      "type": "string",
+      "const": "0.5"
+    },
+    "background": {
+      "type": "string",
+      "const": "#FFFFFF"
+    },
+    "foreground": {
+      "type": "string",
+      "const": "#172B4D"
+    },
+    "accent": {
+      "type": "string",
+      "const": "#005A70"
+    },
+    "font_family": {
+      "type": "string",
+      "const": "Arial"
+    },
+    "title_pt": {
+      "type": "integer",
+      "const": 36
+    },
+    "cover_pt": {
+      "type": "integer",
+      "const": 44
+    },
+    "body_pt": {
+      "type": "integer",
+      "const": 24
+    },
+    "equation_pt": {
+      "type": "integer",
+      "const": 28
+    },
+    "caption_pt": {
+      "type": "integer",
+      "const": 20
+    },
+    "footer_pt": {
+      "type": "integer",
+      "const": 18
+    },
+    "word_body_pt": {
+      "type": "integer",
+      "const": 12
+    },
+    "word_heading1_pt": {
+      "type": "integer",
+      "const": 20
+    },
+    "word_heading2_pt": {
+      "type": "integer",
+      "const": 16
+    },
+    "word_heading3_pt": {
+      "type": "integer",
+      "const": 13
+    },
+    "word_equation_pt": {
+      "type": "integer",
+      "const": 14
+    },
+    "word_caption_pt": {
+      "type": "integer",
+      "const": 11
+    },
+    "word_page": {
+      "type": "string",
+      "const": "A4"
+    },
+    "word_margin_mm": {
+      "type": "integer",
+      "const": 25
+    },
+    "word_heading_colour": {
+      "type": "string",
+      "const": "#000000"
+    },
+    "figure_editable": {
+      "type": "boolean",
+      "const": true
+    },
+    "notes_audience": {
+      "type": "string",
+      "const": "public_student"
+    }
+  },
+  "required": [
+    "schema_version",
+    "status",
+    "aspect_ratio",
+    "width_inches",
+    "height_inches",
+    "safe_margin_inches",
+    "background",
+    "foreground",
+    "accent",
+    "font_family",
+    "title_pt",
+    "cover_pt",
+    "body_pt",
+    "equation_pt",
+    "caption_pt",
+    "footer_pt",
+    "word_body_pt",
+    "word_heading1_pt",
+    "word_heading2_pt",
+    "word_heading3_pt",
+    "word_equation_pt",
+    "word_caption_pt",
+    "word_page",
+    "word_margin_mm",
+    "word_heading_colour",
+    "figure_editable",
+    "notes_audience"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M5 baseline design contract version 1"
+}
