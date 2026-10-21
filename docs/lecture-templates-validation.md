@@ -44,7 +44,7 @@ git diff --check
 | Bibliography audit | PASS; existing regression confirms the release gate still fails on unresolved Ng metadata |
 | Whitespace and local Markdown links | PASS after final documentation changes |
 | Source content inspection | Public TODO scaffold only; no answers, student records, copied academic content or binary outputs |
-| Hosted CI | Not run; nothing pushed |
+| Hosted CI | Initial PR #63 run failed because the test file was untracked; see correction below |
 | PPTX/DOCX, rendering and device tests | NOT RUN; deferred, not passed |
 
 The completed-source success test uses a synthetic fixture to exercise structure; it is not an academically completed lecture. The validator cannot establish semantic correctness, citation coverage, confidentiality or visual quality. Proposed contrast tokens pass numeric checks; actual display contrast and font rendering remain untested.
@@ -62,4 +62,12 @@ The completed-source success test uses a synthetic fixture to exercise structure
 
 The unavailable capability is `load_workspace_dependencies` (supported runtime executable/package/renderer discovery), with no Artifact Session alternative exposed. The supported artifact build/renderer environment therefore cannot be established. Resume binary generation only when available and authorised; do not install substitutes. The handoff remains a specification until a checked baseline exists and a human verifies their actual Microsoft 365 capabilities.
 
-Further decisions: professor acceptance of typography/layout and Word mapping, font availability during build, actual Copilot licence/features, and existing bibliography/release decisions including Ng metadata. No broad assessment or curriculum decision is made here. No commit, push, PR, issue comment, closure or publication has been performed.
+Further decisions: professor acceptance of typography/layout and Word mapping, font availability during build, actual Copilot licence/features, and existing bibliography/release decisions including Ng metadata. No broad assessment or curriculum decision is made here. Initial implementation made no remote changes; the subsequent PR #63 correction is authorised for commit, push and PR-description update, but not merge or issue closure.
+
+## PR #63 discovery correction
+
+Refs #8. The [failed Ubuntu run](https://github.com/fajouri/msc-machine-learning/actions/runs/39620050105) used Python 3.13.16 and reported zero tests with exit 5. At PR head `2565685`, `tests/test_lecture_templates.py` existed only as an untracked local file. It was absent from the committed tree, so GitHub checkout could not discover it. This was not an import/package-layout failure; the existing path-based import works without `tests/__init__.py` or third-party packages.
+
+The correction tracks the existing 17-test file and adds an explicit workflow discovery guard. The guard rejects loader/import errors and fewer than 17 cases (including zero), then runs the discovered suite and propagates failures. A minimum permits later test additions without weakening today's coverage requirement. No production source, presentation runtime or dependency changes are required.
+
+Local correction evidence (Windows, Python 3.13.2): targeted 17 tests and full 70-test suite pass. The exact workflow Python block also passes all 17 tests. Negative probes using a nonexistent discovery pattern and an import-error fixture both exit nonzero. Source validator and whitespace checks pass. Hosted results are recorded in the PR description after push; local success alone is not Ubuntu evidence. Issue #8 remains open and all Office/visual/professor gates above remain deferred.
