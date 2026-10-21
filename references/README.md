@@ -40,10 +40,45 @@ For each future use, add an object to `uses` with these fields:
 | rights_status | `link_only`, `TODO`, or `cleared`. |
 | permission_evidence | Public evidence URL for clearance (licence or public permission reference); keep private correspondence outside this repository. Empty only for link-only or pending uses. |
 | review_note | Reviewer/date and asset-specific conditions, or an explicit TODO. |
+| clearance | Structured human approval record required only when `rights_status` is `cleared`; fields below. |
+
+For a `cleared` use, retain `permission_evidence` as the public evidence URL and provide a `clearance` object with all of the following fields. A URL alone is insufficient. Do not publish private correspondence or personal details; use an authorised reviewer role and a public permission reference where appropriate.
+
+| Clearance field | Validation and meaning |
+| --- | --- |
+| permission_source | Nonblank string identifying the rights holder or licence issuer. |
+| permitted_use | Nonblank string describing the specific asset, proposed reuse, modifications and distribution destination covered. |
+| conditions | Nonblank string naming the applicable licence/permission and its conditions, including attribution and modification limits. Explicitly record if there are no additional conditions. |
+| reviewer | Nonblank reviewer identity or accountable institutional role. |
+| review_date | Valid calendar date in exactly `YYYY-MM-DD` format. |
+| approval_status | Exactly `approved`; pending, rejected, missing or boolean values cannot support `cleared`. |
+
+Human approval remains mandatory. These checks establish that an approval record is present and structured; they cannot authenticate the reviewer, verify evidence, interpret licence scope or determine legal validity. `TODO` and `link_only` entries do not require a clearance object. Pending permissions remain `TODO` until reviewed and explicitly approved.
 
 Use original explanations and examples with scholarly attribution. Citation is not clearance to copy or closely adapt protected expression. For quotations, figures and code, record applicable licence/permission, scope, attribution and modification requirements before release. A public educational repository is a distribution destination; access through a library does not itself establish reuse permission. `link_only` is this project's conservative handling decision, not a legal assertion that no exception could ever apply. No blanket fair-use or classroom exemption is assumed.
 
 Use the validator's `--release` mode to reject unresolved metadata and pending rights before publication. This intentionally fails today on Ng's unresolved reference. Audit mode permits explicit TODOs, allowing an honest audit to be complete without inventing missing facts. Tests validate record integrity and release gates; they cannot authenticate a rights holder or establish legal sufficiency. Professor review remains required for publication decisions.
+
+### Mandatory manual release coverage checklist
+
+`--release` validates registered entries only. Successful execution does **not** establish complete coverage of all reused third-party materials in teaching artifacts: omitted citations cannot be detected by this validator. Repository inspection for PR #59 found no separate asset manifest or tracking convention; reuse `citation-usage.json` rather than introducing a parallel inventory system.
+
+Before every release, the human reviewer must complete and record this checklist in the release validation report, identifying the artifact paths/revisions reviewed, reviewer role, date, findings and final approval:
+
+- [ ] Enumerate all artifacts in the release, including embedded slides/images, notebooks and outputs, PDFs, code, datasets and supporting downloads.
+- [ ] Inspect each artifact for third-party quotations, paraphrases, figures, code and other reused material, including content missing from the ledger.
+- [ ] Reconcile each use with `citation-usage.json`, confirming source, exact locator, destination artifact and visible attribution. Unrepresentable or unregistered uses block release until recorded and reviewed; do not mislabel them to pass validation.
+- [ ] Check each clearance against the actual use and destination, licence conditions and modifications. Verify permission evidence and human approval rather than relying on URL syntax.
+- [ ] Confirm restricted content, instructor answers and private correspondence are excluded; record any genuinely empty reuse inventory as a reviewed finding, not an assumption.
+- [ ] Resolve discrepancies, run `--release`, and record professor approval separately. Both automated checks and this manual review must pass before publication.
+
+Proposed follow-up issue (not created): **Reconcile a pilot session's declared asset inventory with citation usage.** Limit the pilot to one session's explicit artifact list and references to `citation-usage.json`; report missing/orphaned registrations and require reviewer sign-off. Acceptance should include fixtures for omitted registrations and explicitly original assets. This can check inventory consistency, not discover all third-party content or prove legal validity. A reliable general content scanner is outside Issue #5; manual inspection remains required.
+
+### Continuous integration
+
+[Bibliography audit workflow](../.github/workflows/bibliography.yml) runs the audit validator and unit tests on relevant pull requests and pushes to `master`, with only `contents: read` permissions. Repository inspection found no pre-existing workflow or declared Python version; this focused workflow uses Python 3.13, matching the locally validated 3.13.2 environment, without imposing a version on future teaching notebooks. It uses standard-library tests and installs no external Python packages. Action usage follows the official [setup-python v5 documentation](https://github.com/actions/setup-python/blob/v5/README.md) and [checkout v4 documentation](https://github.com/actions/checkout/blob/v4/README.md).
+
+CI does not run the blocked publication gate as a required successful command. A regression test checks that `--release` returns exit code 1 specifically for Ng's unresolved metadata; this expected failure makes the test pass. Update that regression only when the underlying academic decision is legitimately resolved. Passing CI is not publication approval.
 
 ## Reproduction and outstanding decisions
 
@@ -58,4 +93,6 @@ git diff --check
 
 Revisit each primary URL, check the named metadata and rights statements, update evidence/date if changed, then run the offline checks. No book downloads or network calls occur in tests. Re-run `--release` only when preparing publication; current expected result is a nonzero exit with the Ng TODO.
 
-Outstanding: professor decides the Ng citation correction after exact-version verification, confirms any institutional reading access, and approves any future asset reuse. These are recorded audit findings rather than missing prerequisites to performing SETUP-05. No requests to rights holders or GitHub comments were sent. Issue evidence posting and PR creation remain deferred to user approval.
+Outstanding: professor decides the Ng citation correction after exact-version verification, confirms any institutional reading access, and approves any future asset reuse. These are recorded audit findings rather than missing prerequisites to performing SETUP-05.
+
+Execution history: the original local Codex audit stopped without committing, pushing or creating a PR. Subsequent GitHub commits brought the artifacts to [PR #59](https://github.com/fajouri/msc-machine-learning/pull/59), whose pre-review head was `dd527990aa7f9347445b0af53b6257b85a906d82`. The review-fix task authorises committing/pushing corrections and updating that existing PR for [Issue #5](https://github.com/fajouri/msc-machine-learning/issues/5). This engineering workflow does not establish professor approval or copyright clearance. No rights-holder requests were sent.

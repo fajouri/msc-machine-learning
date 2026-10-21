@@ -1,6 +1,7 @@
 """Offline SETUP-05 provenance and citation-release checks (standard library)."""
 import argparse
 import json
+import re
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
@@ -13,7 +14,22 @@ def web_url(value):
     return isinstance(value, str) and urlparse(value).scheme in {'http', 'https'} and bool(urlparse(value).netloc)
 
 
+def nonempty_text(value):
+    return isinstance(value, str) and bool(value.strip())
+
+
+def iso_date(value):
+    if not isinstance(value, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+        return False
+    try:
+        date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
+
+
 def validate(bibliography, ledger, root=ROOT, release=False):
+    """Check registered entries only; omitted assets require manual coverage review."""
     errors = []
     def require(condition, message):
         if not condition:
@@ -60,6 +76,14 @@ def validate(bibliography, ledger, root=ROOT, release=False):
         require(status != 'link_only' or kind == 'link', f'{label}: link-only cannot clear reused content')
         if status == 'cleared':
             require(web_url(use.get('permission_evidence')), f'{label}: clearance needs evidence URL')
+            clearance = use.get('clearance')
+            if not isinstance(clearance, dict):
+                errors.append(f'{label}: clearance must be a structured approval record')
+            else:
+                for field in ('permission_source', 'permitted_use', 'conditions', 'reviewer'):
+                    require(nonempty_text(clearance.get(field)), f'{label}: clearance requires {field}')
+                require(iso_date(clearance.get('review_date')), f'{label}: clearance review_date must be a valid YYYY-MM-DD date')
+                require(clearance.get('approval_status') == 'approved', f'{label}: clearance approval_status must be approved')
         if release:
             require(status in {'cleared', 'link_only'}, f'{label}: pending rights prevent release')
     return errors
@@ -67,7 +91,8 @@ def validate(bibliography, ledger, root=ROOT, release=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--release', action='store_true')
+    parser.add_argument('--release', action='store_true',
+                        help='Check registered entries for release; manual asset/citation coverage and human approval are still required.')
     args = parser.parse_args()
     folder = Path(__file__).resolve().parent
     bibliography = json.loads((folder / 'bibliography.json').read_text(encoding='utf-8'))
@@ -78,7 +103,8 @@ def main():
     if errors:
         return 1
     print('PASS: five source records, provenance, roles and citation usage validated offline.')
-    print('Audit mode permits documented TODOs; no legal clearance or professor approval is inferred.')
+    print('Registered entries only: success does not establish complete asset/citation coverage.')
+    print('Manual coverage review and human approval remain mandatory; legal validity is not determined by this tool.')
     return 0
 
 

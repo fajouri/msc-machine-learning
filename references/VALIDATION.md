@@ -1,41 +1,45 @@
-# Issue #5 validation and acceptance report
+# Issue #5 validation and PR #59 review report
 
-Date: 2026-10-21. Status: implementation ready for review; citation correction and publication approval pending.
+Date: 2026-10-21. Scope: [Issue #5](https://github.com/fajouri/msc-machine-learning/issues/5), [PR #59](https://github.com/fajouri/msc-machine-learning/pull/59). Engineering corrections are ready for review; academic citation corrections and publication approval remain pending.
 
-## Files added
+## Execution history
 
-- [README.md](README.md): dependency evidence, source findings, reuse workflow, unresolved decisions and reproduction commands.
-- [bibliography.json](bibliography.json): five descriptor citations, independently verified fields, primary-source evidence, access/reuse decisions and explicit TODOs.
-- [citation-usage.json](citation-usage.json): empty ledger for future artifact-level citations; no fictitious uses.
-- [validate_bibliography.py](validate_bibliography.py): offline integrity and release checks.
-- [../tests/test_bibliography.py](../tests/test_bibliography.py): fourteen positive/negative regression tests.
-- This validation report.
+The original local Codex audit produced six files without committing, pushing or creating a PR. Those statements described that execution only. Subsequent GitHub commits and PR creation are evidenced by PR #59, with pre-review head `dd527990aa7f9347445b0af53b6257b85a906d82`. The current task explicitly authorises a review-fix commit, push to the existing branch and PR description update. No new PR, merge or issue closure is authorised by this report.
 
-## Results
+## Review findings and changed files
 
-| Check | Result |
+| Finding | Disposition | Evidence |
+| --- | --- | --- |
+| F1 | FIXED | [Validator](validate_bibliography.py) requires structured clearance plus evidence URL, nonblank permission source/scope/conditions/reviewer, valid YYYY-MM-DD date and explicit approved status. [Tests](../tests/test_bibliography.py) cover valid and invalid records. No real material is marked cleared. |
+| F2 | FIXED | [Guide](README.md) and CLI state registered-entry-only coverage. Mandatory manual release checklist reuses the existing ledger. A narrowly scoped inventory-reconciliation follow-up is proposed, not created; no content scanner added. |
+| F3 | FIXED | This report and the guide distinguish original local execution from subsequent commits and PR creation, retain open decisions, and reference #5/#59. PR description is updated as part of the authorised handoff. |
+| F4 | FIXED | [Workflow](../.github/workflows/bibliography.yml) runs audit validation and tests on relevant PRs/master pushes with read-only permissions and no external Python packages. Publication-gate failure is tested as an expected result, not used to fail normal CI. |
+
+Five changed files: the validator, guide, report, tests and new workflow. The five-source [bibliography](bibliography.json), [usage ledger](citation-usage.json), descriptor and curriculum are unchanged. Structured approval test records are synthetic fixtures only.
+
+## Reproducible validation
+
+Local environment: Python 3.13.2 on Windows. No prior repository Python-version declaration/workflow was found; focused CI uses Python 3.13. Commands run from repository root:
+
+```powershell
+python -s references/validate_bibliography.py
+python -s -m unittest discover -s tests -p "test_bibliography.py" -v
+python -s references/validate_bibliography.py --release
+git diff --check
+```
+
+| Check | Actual result |
 | --- | --- |
-| SETUP-02 prerequisite | PASS: issue closed, artifacts present, traceability validator passes including descriptor identity. |
-| Five-source metadata/rights audit | PASS with explicit TODO: four references confirmed; Ng year/version not verified. Primary links and evidence recorded. |
-| Offline bibliography validator | PASS. |
-| Unit tests | PASS: 14/14, including duplicate/missing sources, missing provenance, unknown citations, false clearance, private/path escape and release blocking. |
-| Release validator | EXPECTED FAIL: `ng2017: unresolved metadata/TODO prevents release`. Publication is not cleared. |
-| New-file Markdown links and trailing whitespace | PASS; checked separately because untracked files are not covered by `git diff --check`. |
-| Git whitespace check and scope | PASS; existing tracked files unchanged; additions confined to references/ and tests/. |
-| Manual boundary review | PASS: no book text, figures, solutions, student data, permissions correspondence or descriptor copy added. No academic requirements changed. |
+| Audit validator | PASS, exit 0. |
+| Complete relevant unit suite | PASS, 22/22 tests. Includes missing evidence, permission scope, reviewer/approval, invalid dates, rejected approval, valid structured clearance, link-only/TODO, unknown sources, path escapes and private artifacts. |
+| Publication gate | EXPECTED FAIL, exit 1, exactly `FAIL: ng2017: unresolved metadata/TODO prevents release`; no additional error or stderr. CLI regression verifies this. |
+| Git whitespace check | PASS. |
+| Scope/metadata comparison | Bibliography, ledger, descriptor and approved academic files unchanged from pre-review HEAD. |
 
-Offline tests do not prove that URLs will remain reachable or authenticate legal permission. Primary-source web inspection was performed on the audit date; future reuse needs asset-specific review. No institutional subscription is presumed.
+Local checks exercise both workflow commands; hosted CI results are reported by PR #59's checks, rather than inferred from local success. No claim of hosted CI success is made in this committed report.
 
-## Acceptance criteria disposition
+## Acceptance and unresolved decisions
 
-| Issue requirement | Disposition |
-| --- | --- |
-| Scoped artifacts, provenance, decisions and reproducible execution | Implemented. |
-| No fabricated citations or undocumented descriptor changes | Met: unresolved fields explicitly TODO/null; descriptor wording preserved separately. |
-| Student/instructor and restricted-content boundaries | Met for this change; metadata/links only. |
-| Corresponding tests/checklist pass | Audit validation and tests pass; release gate intentionally remains blocked. |
-| Verification evidence/file links added to issue or PR | Prepared locally here; not posted because user approval has not been given for external publication. |
-| Relevant PR references issue | Deferred: no PR requested/approved; local artifacts identify #5. |
-| Professor approval where applicable | Pending: Ng date/version and URL correction, future reuse decisions and release. |
+Issue #5 provenance, scoped artifacts, tests and restricted-content boundaries are implemented. This report supplies evidence and file links for the existing PR description. Issue #5 remains open: professor review of Ng date/version and URL, future permissions and publication approval are unresolved. No closing keyword is used for #5.
 
-No commits, pushes, PRs, issue comments, or rights-holder messages were made. No other issue was implemented. Remaining decisions are audit findings, not fabricated resolutions.
+The validator cannot discover omitted third-party materials, authenticate human reviewers or determine legal validity from URLs or populated records. Manual coverage review and human approval remain mandatory. Four references retain verified metadata; Ng retains its explicit TODO and no replacement date is invented. Institutional subscriptions are unverified. No book content, instructor answers, private correspondence or student data are introduced. No rights-holder messages were sent.
