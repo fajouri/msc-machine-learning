@@ -1,0 +1,36 @@
+name: Hybrid delivery planning checks
+
+on:
+  pull_request:
+    paths:
+      - 'docs/delivery-*.md'
+      - 'docs/PRODUCTION_PLAN.md'
+      - 'curriculum/**'
+      - 'tests/test_delivery.py'
+      - '.github/workflows/delivery.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'docs/delivery-*.md'
+      - 'docs/PRODUCTION_PLAN.md'
+      - 'curriculum/**'
+      - 'tests/test_delivery.py'
+      - '.github/workflows/delivery.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -s curriculum/validate_curriculum.py
+      - run: python -s curriculum/validate_delivery.py
+      - run: python -s -m unittest discover -s tests -p "test_delivery.py" -v
