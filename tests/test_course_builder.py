@@ -187,7 +187,7 @@ class CourseBuilderTests(unittest.TestCase):
         source = '\n'.join(''.join(c['source']) for c in notebook['cells'] if c['cell_type'] == 'code')
         result = subprocess.run([sys.executable, '-I', '-c', source], capture_output=True, text=True)
         self.assertEqual(0, result.returncode, result.stderr)
-        self.assertEqual('', result.stdout)
+        self.assertIn('NOT ATTEMPTED', result.stdout)
 
     def remove_drafting_markers(self, folder):
         # Synthetic structural candidates only, never academic approval fixtures.
@@ -201,6 +201,27 @@ class CourseBuilderTests(unittest.TestCase):
         builder.snapshot(self.root, 'S01')
         builder.check(self.root, 'S01', ready=True)
         self.assertEqual('pending_professor_review', builder.read_json(folder / 'manifest.json')['approval'])
+
+    def test_review_ready_retains_student_tasks_but_blocks_author_todos(self):
+        folder = self.init()
+        for name in builder.TEXT_FILES:
+            path = folder / name
+            path.write_text(path.read_text(encoding='utf-8').replace('TODO', 'Fixture'), encoding='utf-8')
+        path = folder / 'student-lab.ipynb'
+        notebook = builder.read_json(path)
+        for cell in notebook['cells']:
+            if not cell['id'].startswith('student-'):
+                cell['source'] = [line.replace('TODO', 'Fixture') for line in cell['source']]
+        builder.write_json(path, notebook)
+        builder.snapshot(self.root, 'S01')
+        builder.check(self.root, 'S01', ready=True)
+        self.assertIn('STUDENT TODO:', path.read_text(encoding='utf-8'))
+        next(c for c in notebook['cells'] if c['id'] == 'student-experiment')['source'].append(
+            '\n# TODO: unresolved author decision\n')
+        builder.write_json(path, notebook)
+        builder.snapshot(self.root, 'S01')
+        with self.assertRaisesRegex(ValueError, 'drafting marker'):
+            builder.check(self.root, 'S01', ready=True)
 
     def test_full_package_requires_real_office_containers(self):
         folder = self.init(package='full')

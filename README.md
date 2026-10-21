@@ -32,6 +32,10 @@ Ask Codex to use [msc-course-builder](skills/msc-course-builder/SKILL.md) for on
 
 See `docs/PRODUCTION_PLAN.md`, `curriculum/session-map.csv`, and GitHub Issues for production tasks. Project board: https://github.com/users/fajouri/projects/6/views/1
 
+## Student notebook templates
+
+[AUTO-03 notebook templates](templates/notebook/README.md) provide a Colab-compatible session lab and independent investigation, synthetic data, reproducible execution, blank student tasks and automated checks. See [Issue #9 evidence and limitations](docs/notebook-templates-validation.md). These are reusable drafts, not completed session lessons or instructor solutions.
+
 ## Lecture source templates
 
 [AUTO-02 source contracts](templates/lecture/README.md) provide proposed 16:9 design rules, structured JSON/Markdown outlines, a Word style mapping, a manual PowerPoint Copilot handoff and dependency-free validation. PPTX/DOCX generation and visual QA remain deferred because the supported artifact runtime is unavailable. See the [Issue #8 validation report](docs/lecture-templates-validation.md); the issue remains open.

@@ -219,7 +219,10 @@ def check(root, selected, ready=False, hashes=True):
         if path.name == 'student-lab.ipynb':
             notebook_check(read_json(path))
         if ready and path.suffix in ('.md', '.ipynb'):
-            if re.search(r'\b(TODO|TBD|FIXME)\b|\{\{', path.read_text(encoding='utf-8'), re.I):
+            text = path.read_text(encoding='utf-8')
+            if path.suffix == '.ipynb':
+                text = notebook_authoring_text(read_json(path))
+            if re.search(r'\b(TODO|TBD|FIXME)\b|\{\{', text, re.I):
                 raise ValueError('unresolved drafting marker: ' + path.name)
         if ready and path.name in BINARY_FILES:
             member = 'word/document.xml' if path.suffix == '.docx' else 'ppt/presentation.xml'
@@ -227,6 +230,22 @@ def check(root, selected, ready=False, hashes=True):
                 if not {'[Content_Types].xml', member} <= set(archive.namelist()):
                     raise ValueError('invalid Office container: ' + path.name)
     return target, manifest
+
+
+def notebook_authoring_text(value):
+    """Only explicit student task markers in student-* cells are not drafting TODOs.
+
+    This is a readiness distinction, never permission to hide arbitrary author work.
+    All other markers (including template tokens) remain visible to the gate.
+    """
+    notebook_check(value)
+    sources = []
+    for cell in value['cells']:
+        text = ''.join(cell['source'])
+        if cell['id'].startswith('student-'):
+            text = text.replace('STUDENT TODO:', 'Student task:')
+        sources.append(text)
+    return '\n'.join(sources)
 
 
 def snapshot(root, selected):
