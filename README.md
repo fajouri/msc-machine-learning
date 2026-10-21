@@ -11,6 +11,8 @@ Course production workspace for Ascencia Malta MSc Computer Science, MQF Level 7
 
 See the [curriculum data model and proposed workload allocation](curriculum/README.md) for the 250-hour accounting, source provenance, validation commands and pending academic decisions.
 
+See the [proposed hybrid delivery and contingency plan](docs/delivery-plan.md) for all 16 sessions, accessibility, campus logistics, outage recovery and S16 timing. [Validation evidence](docs/delivery-validation.md) distinguishes automated checks from pending professor approval and delivery readiness.
+
 ## Production workflow
 
 1. Confirm descriptor, hybrid approval, academic policies and source licenses.
