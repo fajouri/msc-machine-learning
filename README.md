@@ -24,6 +24,10 @@ See the [proposed hybrid delivery and contingency plan](docs/delivery-plan.md) f
 
 ## Important security notice
 
-This repository was **public** when the project was initialized. Keep all instructor-only material in a separate private repository/storage. GitHub history cannot be relied on to conceal material after removal.
+This repository is **public**. The lecturer has decided that no private repository will be used. The [course-builder boundary](docs/course-builder-boundary.md) excludes student names, marks, submissions, instructor solutions and exam keys from its outputs. GitHub history cannot be relied on to conceal material after removal.
+
+## Reusable session production skill
+
+Ask Codex to use [msc-course-builder](skills/msc-course-builder/SKILL.md) for one session and task issue. It provides staged templates, source preflight, output manifests and review checks. It does not publish or generate instructor-only material. See the [Issue #7 validation report](docs/course-builder-validation.md) for scope, reproducible tests and remaining release decisions.
 
 See `docs/PRODUCTION_PLAN.md`, `curriculum/session-map.csv`, and GitHub Issues for production tasks. Project board: https://github.com/users/fajouri/projects/6/views/1
