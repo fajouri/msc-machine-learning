@@ -1,0 +1,14 @@
+# Do not commit instructor-only solutions, exam keys, datasets with restricted licenses, credentials, student data.
+.env
+.env.*
+!.env.example
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+*.pyc
+instructor-private/
+private/
+secrets/
+exam-keys/
+student-data/
+*.secret.*
