@@ -1,0 +1,546 @@
+{
+  "schema_version": 1,
+  "issue": 3,
+  "status": "draft_pending_professor_review",
+  "sources": [
+    {
+      "path": "docs/Machine Learning.pdf",
+      "sha256": "bdc82a68602e666e13b869de83279241c85d81a307a7f770742f245690f40660",
+      "status": "local_descriptor_do_not_publish",
+      "hash_mode": "raw_bytes"
+    },
+    {
+      "path": "curriculum/traceability-matrix.md",
+      "sha256": "f7cd454ee0ddab06b880ef557337b318c8e99e0b5920fe58790b1757c647b949",
+      "status": "audited_descriptor_transcription_and_proposals",
+      "hash_mode": "utf8_lf"
+    },
+    {
+      "path": "curriculum/session-map.csv",
+      "sha256": "92b4f9665a376bcca52d08401d974e81e3e1b69c2910367c1a773964f0424b6d",
+      "status": "working_map",
+      "hash_mode": "utf8_lf"
+    },
+    {
+      "path": "docs/PRODUCTION_PLAN.md",
+      "sha256": "d8aa29bcf6d4f684dd5f08fc481c6cbad3ff8a1d0168efd28bffdbef59caec04",
+      "status": "lecturer_report_2026-10-21",
+      "hash_mode": "utf8_lf"
+    }
+  ],
+  "dependencies": [
+    {
+      "issue": 1,
+      "status": "closed_verified_2026-10-21"
+    },
+    {
+      "issue": 2,
+      "status": "closed_verified_2026-10-21"
+    }
+  ],
+  "approved": {
+    "module": "M5: Machine Learning",
+    "mqf_level": 7,
+    "ects": 10,
+    "hours": {
+      "total": 250,
+      "contact": 50,
+      "self_study": 160,
+      "assessment": 40
+    },
+    "learning_outcomes": [
+      {
+        "id": "LO1",
+        "wording": "Explain and compare supervised, unsupervised, and reinforcement learning paradigms, identifying appropriate algorithms for given problem types.",
+        "descriptor_page": 1
+      },
+      {
+        "id": "LO2",
+        "wording": "Implement data preprocessing pipelines including cleaning, feature engineering, scaling, and encoding using Python (pandas, scikit-learn).",
+        "descriptor_page": 1
+      },
+      {
+        "id": "LO3",
+        "wording": "Build, train, and evaluate supervised learning models (regression and classification) using scikit-learn, applying rigorous cross-validation.",
+        "descriptor_page": 1
+      },
+      {
+        "id": "LO4",
+        "wording": "Apply unsupervised learning techniques (clustering, dimensionality reduction) and interpret results in a domain context.",
+        "descriptor_page": 1
+      },
+      {
+        "id": "LO5",
+        "wording": "Develop reinforcement learning solutions by defining MDPs and implementing Q-learning or policy gradient methods.",
+        "descriptor_page": 1
+      },
+      {
+        "id": "LO6",
+        "wording": "Build and train deep neural networks using TensorFlow/Keras, applying regularisation techniques to prevent overfitting.",
+        "descriptor_page": 1
+      },
+      {
+        "id": "LO7",
+        "wording": "Evaluate model performance using appropriate metrics, diagnose bias-variance issues, and apply hyperparameter optimisation.",
+        "descriptor_page": 1
+      },
+      {
+        "id": "LO8",
+        "wording": "Design and execute an end-to-end machine learning competition pipeline (Kaggle-style), document findings, and present results.",
+        "descriptor_page": 2
+      }
+    ],
+    "topic_blocks": [
+      {
+        "id": "B01",
+        "sessions": [
+          "S01",
+          "S02"
+        ],
+        "title": "Foundations",
+        "content_summary": "ML paradigms, scientific Python, wrangling, EDA",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B02",
+        "sessions": [
+          "S03",
+          "S04"
+        ],
+        "title": "Regression",
+        "content_summary": "Linear and polynomial regression, regularisation, evaluation",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B03",
+        "sessions": [
+          "S05",
+          "S06"
+        ],
+        "title": "Classification",
+        "content_summary": "Decision trees, random forests, SVM, ensembles",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B04",
+        "sessions": [
+          "S07",
+          "S08"
+        ],
+        "title": "Evaluation",
+        "content_summary": "Cross-validation, hyperparameter tuning, feature importance",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B05",
+        "sessions": [
+          "S09",
+          "S10"
+        ],
+        "title": "Unsupervised learning",
+        "content_summary": "K-means, hierarchical clustering, DBSCAN, PCA, t-SNE, autoencoders",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B06",
+        "sessions": [
+          "S11",
+          "S12"
+        ],
+        "title": "Reinforcement learning",
+        "content_summary": "MDPs, Q-learning, OpenAI Gym, policy-gradient introduction",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B07",
+        "sessions": [
+          "S13",
+          "S14"
+        ],
+        "title": "Deep learning",
+        "content_summary": "MLP, CNN, RNN basics, transfer learning, deployment",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B08",
+        "sessions": [
+          "S15"
+        ],
+        "title": "Ethics",
+        "content_summary": "Bias, fairness metrics, responsible ML, explainability",
+        "descriptor_page": 2
+      },
+      {
+        "id": "B09",
+        "sessions": [
+          "S16"
+        ],
+        "title": "Capstone",
+        "content_summary": "Kaggle debrief, presentations, synthesis",
+        "descriptor_page": 2
+      }
+    ],
+    "assessments": [
+      {
+        "id": "E",
+        "title": "Written Exam",
+        "weight_percent": 60,
+        "duration_minutes": 180,
+        "evidence": [
+          "Theory",
+          "Mathematical foundations",
+          "Interpretation"
+        ]
+      },
+      {
+        "id": "K",
+        "title": "Kaggle Capstone Project",
+        "weight_percent": 30,
+        "evidence": [
+          "Final model/leaderboard performance",
+          "Technical report on methodology, experiments and findings"
+        ]
+      },
+      {
+        "id": "P",
+        "title": "Presentation",
+        "weight_percent": 10,
+        "duration_minutes": 10,
+        "evidence": [
+          "Capstone methodology and results presented to the class"
+        ]
+      }
+    ]
+  },
+  "contact_reconciliation": {
+    "status": "lecturer_report_2026-10-21",
+    "scheduled_teaching_hours": 48,
+    "descriptor_contact_hours": 50,
+    "gap_hours": 2,
+    "additional_activity": {
+      "id": "CERT",
+      "title": "University-administered certification exam",
+      "hours": 2,
+      "category": "contact",
+      "owner": "university",
+      "lecturer_deliverable": false,
+      "m5_assessment": false
+    },
+    "online_sessions": 9,
+    "campus_sessions": 7
+  },
+  "sessions": [
+    {
+      "id": "S01",
+      "title": "ML foundations and Python stack",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO1"
+      ],
+      "indicative_topics": "ML paradigms, workflow, scientific Python",
+      "block_id": "B01",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 8,
+        "activity": "Compare ML paradigms and justify problem formulations; practise scientific Python with a reproducible environment record.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S02",
+      "title": "Data wrangling and EDA",
+      "proposed_mode": "campus",
+      "learning_outcomes": [
+        "LO2"
+      ],
+      "indicative_topics": "Cleaning, preprocessing, feature engineering and exploratory analysis",
+      "block_id": "B01",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Practise cleaning, feature engineering, scaling and encoding; explain training-only fitting and data provenance.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S03",
+      "title": "Regression I",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO3"
+      ],
+      "indicative_topics": "Linear regression, objective functions, baseline models",
+      "block_id": "B02",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Derive the least-squares objective and compare a cross-validated baseline with fold-local preprocessing.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S04",
+      "title": "Regression II",
+      "proposed_mode": "campus",
+      "learning_outcomes": [
+        "LO3",
+        "LO7"
+      ],
+      "indicative_topics": "Polynomial regression, regularisation, model evaluation",
+      "block_id": "B02",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Analyse polynomial complexity and regularisation using validation curves and bias-variance reasoning.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S05",
+      "title": "Classification I",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO3"
+      ],
+      "indicative_topics": "Decision trees and classification metrics",
+      "block_id": "B03",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Explain tree splits and compare classification metrics under imbalance and unequal error costs.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S06",
+      "title": "Classification II",
+      "proposed_mode": "campus",
+      "learning_outcomes": [
+        "LO3",
+        "LO7"
+      ],
+      "indicative_topics": "Random forests, SVM, ensemble methods",
+      "block_id": "B03",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Compare forests, SVM and ensembles under a common validation protocol; justify methodological trade-offs.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S07",
+      "title": "Evaluation I",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO7"
+      ],
+      "indicative_topics": "Cross-validation and leakage",
+      "block_id": "B04",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Critique leakage and split design; distinguish model selection from independent performance estimation.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S08",
+      "title": "Optimisation II",
+      "proposed_mode": "campus",
+      "learning_outcomes": [
+        "LO7"
+      ],
+      "indicative_topics": "Hyperparameter search and feature importance",
+      "block_id": "B04",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Compare tuning strategies under a fixed computational budget and critique feature-importance interpretations.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S09",
+      "title": "Unsupervised I",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO4"
+      ],
+      "indicative_topics": "K-means, hierarchical clustering, DBSCAN",
+      "block_id": "B05",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Compare clustering assumptions, stability and domain meaning across K-means, hierarchical clustering and DBSCAN.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S10",
+      "title": "Unsupervised II",
+      "proposed_mode": "campus",
+      "learning_outcomes": [
+        "LO4"
+      ],
+      "indicative_topics": "PCA, t-SNE, autoencoders",
+      "block_id": "B05",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 12,
+        "activity": "Connect linear algebra to PCA; critique t-SNE geometry and autoencoder reconstruction, including a neural representation prerequisite bridge.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S11",
+      "title": "Reinforcement learning I",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO1",
+        "LO5"
+      ],
+      "indicative_topics": "MDPs and Q-learning foundations",
+      "block_id": "B06",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Formulate an MDP and explain Bellman reasoning and the Q-learning update.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S12",
+      "title": "Reinforcement learning II",
+      "proposed_mode": "campus",
+      "learning_outcomes": [
+        "LO5"
+      ],
+      "indicative_topics": "Q-learning lab, policy gradients introduction",
+      "block_id": "B06",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 10,
+        "activity": "Practise Q-learning with recorded seeds and run variability; contrast policy gradients conceptually. Environment choice remains subject to review.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S13",
+      "title": "Deep learning I",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO6"
+      ],
+      "indicative_topics": "MLP, neural network training, regularisation",
+      "block_id": "B07",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 12,
+        "activity": "Connect loss, gradients and optimisation in a TensorFlow/Keras MLP; analyse regularisation and validation curves.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S14",
+      "title": "Deep learning II",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO6"
+      ],
+      "indicative_topics": "CNN, RNN basics, transfer learning and deployment",
+      "block_id": "B07",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 12,
+        "activity": "Compare CNN/RNN assumptions and transfer learning; evaluate deployment and reproducibility constraints.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S15",
+      "title": "Ethics, fairness and explainability",
+      "proposed_mode": "online",
+      "learning_outcomes": [
+        "LO7"
+      ],
+      "indicative_topics": "Bias, fairness metrics, responsible ML and explainability",
+      "block_id": "B08",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 8,
+        "activity": "Critique subgroup metrics, uncertainty, explanation limits and data permissions; distinguish societal bias from bias-variance.",
+        "status": "proposed"
+      }
+    },
+    {
+      "id": "S16",
+      "title": "Capstone presentations and exam preparation",
+      "proposed_mode": "campus",
+      "learning_outcomes": [
+        "LO8"
+      ],
+      "indicative_topics": "Kaggle debrief, 10-minute presentations, synthesis",
+      "block_id": "B09",
+      "contact_hours": 3,
+      "self_study": {
+        "hours": 8,
+        "activity": "Synthesise connections among methods and reflect on formative feedback; this allocation excludes graded presentation preparation and exam revision.",
+        "status": "proposed"
+      }
+    }
+  ],
+  "assessment_workload": {
+    "status": "proposed",
+    "allocations": [
+      {
+        "id": "E_PREP",
+        "assessment_id": "E",
+        "hours": 9,
+        "activity": "Dedicated revision and timed practice for the written exam"
+      },
+      {
+        "id": "E_SIT",
+        "assessment_id": "E",
+        "hours": 3,
+        "activity": "Sit the on-campus M5 written examination"
+      },
+      {
+        "id": "K_DESIGN",
+        "assessment_id": "K",
+        "hours": 4,
+        "activity": "Define the capstone problem, data permissions and reproducible validation design"
+      },
+      {
+        "id": "K_EXPERIMENT",
+        "assessment_id": "K",
+        "hours": 14,
+        "activity": "Implement and compare baselines and tuned models; record experiments and independent evaluation"
+      },
+      {
+        "id": "K_REPORT",
+        "assessment_id": "K",
+        "hours": 8,
+        "activity": "Write the technical report, analyse limitations and ethical implications, and package reproducibility evidence"
+      },
+      {
+        "id": "P_PREP",
+        "assessment_id": "P",
+        "hours": 2,
+        "activity": "Prepare and rehearse the ten-minute capstone presentation"
+      }
+    ],
+    "presentation_delivery": {
+      "session_id": "S16",
+      "minutes_per_student": 10,
+      "counted_in": "contact",
+      "additional_assessment_hours": 0
+    }
+  },
+  "decisions_pending": [
+    "Professor approval of all detailed self-study and assessment workload allocations, including the proposed accounting of presentation delivery within S16 contact time only.",
+    "Assessment blueprint, dataset and rubrics remain to be approved; no leaderboard/report weight split is defined.",
+    "Confirm S16 Q&A/changeover timing and session timetable; retain the approved topic sequence.",
+    "Review neural prerequisite bridge and RL environment choice without silently replacing OpenAI Gym."
+  ]
+}
