@@ -17,7 +17,14 @@ def check(condition, label):
 
 
 baseline = ROOT / 'curriculum/session-map.csv'
-check(hashlib.sha256(baseline.read_bytes()).hexdigest().upper() ==
+payload = baseline.read_bytes()
+# SETUP-02 recorded the Windows CRLF bytes (fec7671); retain that exact hash.
+# Only CRLF/LF equivalence is permitted: map both to the historical CRLF form.
+# Do not decode, strip a BOM/whitespace, normalise bare CR, or reserialise CSV.
+audit_payload = payload.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')
+print(f'INFO: session map bytes={len(payload)} CRLF={payload.count(bytes([13, 10]))} '
+      f'LF={payload.count(bytes([10]))} SHA-256={hashlib.sha256(payload).hexdigest()}')
+check(hashlib.sha256(audit_payload).hexdigest().upper() ==
       'A60B0336DE9801C95A9ED082FF082E52CFA9B8DAAFF07EFBA4F9C855440E4F10',
       'working session map unchanged from audit baseline')
 with baseline.open(encoding='utf-8-sig', newline='') as source:

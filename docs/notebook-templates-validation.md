@@ -61,3 +61,24 @@ The existing test for bibliography release still confirms the expected failure o
 - No private solution handling decision is introduced. The existing Ng metadata issue, future dataset/reading rights, RL environment choice and S10/S14 scope decisions remain with the professor. No release approval is claimed.
 
 Implementation and local engineering validation are ready for review. Hosted Colab verification and academic/release gates remain explicit outstanding work before student delivery.
+
+## PR #64 correction: preserve the audit hash across checkout line endings
+
+The initial [Linux run 39624086098](https://github.com/fajouri/msc-machine-learning/actions/runs/39624086098) failed on Python 3.13 at `working session map unchanged from audit baseline`; fail-fast cancelled the 3.10/3.12 jobs. The traceability validator hashed raw bytes, unlike the later curriculum validator's explicit CRLF-to-LF source convention. Windows `core.autocrlf=true` produced CRLF in the working tree, while Git stored LF (`git ls-files --eol`: `i/lf w/crlf`).
+
+Exact byte comparison on 2026-10-21:
+
+| Form | Bytes | CRLF pairs / LF bytes | SHA-256 |
+| --- | --- | --- | --- |
+| Windows working CSV / original CRLF audit form | 1544 | 17 / 17 | `a60b0336de9801c95a9ed082ff082e52cfa9b8daaff07efba4f9c855440e4f10` |
+| Git blob / LF checkout form | 1527 | 0 / 17 | `92b4f9665a376bcca52d08401d974e81e3e1b69c2910367c1a773964f0424b6d` |
+
+Both are ASCII-compatible UTF-8, without a BOM or bare carriage returns; only the 17 CR bytes differ. Binary reads via `Path.read_bytes()` and `subprocess.check_output(['git', 'show', revision + ':curriculum/session-map.csv'])` avoid shell decoding/newline conversion. The Git blobs at scaffold `deb702d`, original audit `fec7671` and PR head `100c072` are byte-identical LF content. Converting that historical blob to CRLF reproduces exactly the `a60b...` hash recorded by **both** the original audit matrix and validator at `fec7671`. That historical CRLF identity remains authoritative for this integrity check; it is not replaced by a newly measured hash. The descriptor remains the academic authority and the CSV remains the working teaching map.
+
+The narrow fix in [validate_traceability.py](../curriculum/validate_traceability.py) hashes `payload.replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')` against the **unchanged original CRLF hash**. This explicitly permits LF and CRLF (including a mixture) as transport-equivalent terminators, mapping them back to the historical form. No text decoding, BOM stripping, whitespace trimming, Unicode normalization, bare-CR normalization or CSV reserialization occurs. Final-newline presence remains significant. The validator also logs raw byte length, CRLF/LF counts and SHA-256 so actual Linux checkouts can be compared directly with Windows. No input, expected hash, integrity check or workflow step is removed or skipped.
+
+[Five regression tests](../tests/test_traceability.py) run the full CLI in disposable repositories. They pin both historically established hashes, accept unchanged LF/CRLF/mixed forms, and reject changed mode, LO, title, session number and spacing under both LF and CRLF. They also reject UTF-8 BOM insertion, UTF-16 encoding, changed non-ASCII bytes, bare CR endings, missing/extra final newline and extra whitespace.
+
+Local Windows/Python 3.13.2 verification after correction: **88 tests passed**; traceability, curriculum, delivery, bibliography audit and lecture validators passed; both notebooks passed two fresh Jupyter kernels with identical outputs. Source comparison against `100c072` confirmed unchanged bytes after only checkout CRLF-to-LF normalization for the session CSV, curriculum JSON, traceability matrix/gaps, production plan and delivery plan. In particular, curriculum JSON retains SHA-256 `0183f76df295b2946b4274c172ed25a89c067aab3ff121118851fd8b7d9a0ded`: approved outcomes, assessment rules and teaching modes are unchanged. The correction changes only the traceability validator, its new tests and this report.
+
+Linux GitHub Actions evidence will be recorded after pushing the correction to the existing PR branch. Hosted Colab and professor/release review remain separate gates. No merge or Issue #9 closure is authorised.
