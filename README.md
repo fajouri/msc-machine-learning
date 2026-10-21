@@ -31,3 +31,7 @@ This repository is **public**. The lecturer has decided that no private reposito
 Ask Codex to use [msc-course-builder](skills/msc-course-builder/SKILL.md) for one session and task issue. It provides staged templates, source preflight, output manifests and review checks. It does not publish or generate instructor-only material. See the [Issue #7 validation report](docs/course-builder-validation.md) for scope, reproducible tests and remaining release decisions.
 
 See `docs/PRODUCTION_PLAN.md`, `curriculum/session-map.csv`, and GitHub Issues for production tasks. Project board: https://github.com/users/fajouri/projects/6/views/1
+
+## Lecture source templates
+
+[AUTO-02 source contracts](templates/lecture/README.md) provide proposed 16:9 design rules, structured JSON/Markdown outlines, a Word style mapping, a manual PowerPoint Copilot handoff and dependency-free validation. PPTX/DOCX generation and visual QA remain deferred because the supported artifact runtime is unavailable. See the [Issue #8 validation report](docs/lecture-templates-validation.md); the issue remains open.
