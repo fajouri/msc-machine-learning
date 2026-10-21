@@ -29,6 +29,10 @@ The manifest is an inventory, not publication permission. Fields: `schema_versio
 
 Outputs contain the exact required filenames, each with `path` and raw-byte `sha256`. A missing requested binary has a null hash and is allowed only in draft checks; missing source files are errors. `snapshot` records present files without creating binaries. `check` rejects changed/extra/missing inventory records, source drift, missing source files, unexpected directory content and output hash drift. It checks notebook structure and rejects stored outputs/execution counts and cell metadata. `--review-ready` also requires all files, rejects TODO/TBD/FIXME/template tokens in text/notebooks and checks DOCX/PPTX container identity. These checks cannot evaluate teaching quality, binary layout or prose completeness.
 
+AUTO-03 amendment: the sole readiness marker exception is the exact literal `STUDENT TODO:` inside notebook cells whose IDs start with `student-`; it denotes intentionally uncompleted student work. All other drafting markers in those cells still fail. This exception does not allow unresolved author work to be relabelled as a student task.
+
+AUTO-03 supplies the canonical notebook asset and [reusable notebook conventions](../../../templates/notebook/README.md). Its standard-library path runs without completing exercises; explicit NOT ATTEMPTED feedback is not completion evidence. Run notebook execution validation in addition to package integrity checks. The manifest version, notebook metadata allowlist and single `student-lab.ipynb` output remain unchanged; no lecture-schema fields or private solution outputs are added.
+
 The completion report is hashed; the manifest does not hash itself. Record planned final commands in the report before snapshot and their actual results in the final response to avoid recursive hash updates. Subsequent edits need another snapshot/check.
 
 ## Authoring and human checks
