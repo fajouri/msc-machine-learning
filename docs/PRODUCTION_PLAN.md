@@ -6,6 +6,21 @@ Approved Ascencia Malta M5 Machine Learning module descriptor (2 pages). **Do no
 ## Hybrid delivery proposal (requires approval)
 9 synchronous online (S01, S03, S05, S07, S09, S11, S13, S14, S15) and 7 campus (S02, S04, S06, S08, S10, S12, S16). Preserve topic sequence. Unresolved: face-to-face wording in approved descriptor, 48 vs 50 contact hours, class size/S16 presentations, exam supervision and rubric details.
 
+## SETUP-01 decision register (2026-10-21)
+
+| Item | Status | Evidence / next action |
+| --- | --- | --- |
+| Public educational repository | Lecturer reports university authorisation for public publication; scope of permitted materials still subject to copyright/privacy rules | User confirmation, 2026-10-21; do not publish restricted third-party sources, answer keys, or student data |
+| Nine synchronous online + seven campus sessions | Proposed, **not yet confirmed as specifically authorised** | Confirm hybrid permission despite descriptor saying face-to-face |
+| Contact hours | **Unresolved** | Approved 50h, but 16 × 3 = 48h; seek approved treatment for 2h difference |
+| Class size / presentation capacity | **Unknown** | Determine enrollment; S16 includes 10-minute presentations |
+| Written examination | Three-hour, 60% per descriptor; modality/supervision **unknown** | Confirm on-campus/proctored method, scheduling and access rules |
+| Institutional LMS / synchronous meeting platform | **Unknown** | Confirm Teams/Moodle/other tools and policies |
+| Google Colab and Kaggle | Proposed tools, institutional/student access **unconfirmed** | Confirm student account, data protection and any service restrictions |
+| Approval authority/date | Lecturer has reported permission for public educational publication on 2026-10-21; named university approver not recorded | Record responsible approver and authorisation details if available |
+
+No institutional policy or academic descriptor change is implied by this register.
+
 ## Tool routing
 - **Codex** (primary): curriculum, evidence-based academic text, structured Word/Markdown, slide drafts, notebooks, solutions in private storage, QA scripts and reusable skills.
 - **Microsoft 365 Copilot** (manual handoff): edit/improve approved PPTX visual quality; verify licence features and mathematical fidelity.
