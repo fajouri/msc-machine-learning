@@ -12,7 +12,7 @@ Nine synchronous online sessions (S01, S03, S05, S07, S09, S11, S13, S14, S15) a
 | --- | --- | --- |
 | Public educational repository | Lecturer reports university permission for public educational publication (2026-10-21) | Observe third-party copyright, student privacy and instructor-only confidentiality |
 | Hybrid delivery | Lecturer confirms university authorisation for **9 live online + 7 campus sessions** (2026-10-21) | Specific named approver not recorded; proposed S01–S16 mode allocation remains subject to timetable confirmation |
-| Contact hours | Lecturer states the university has **already resolved** the 50-vs-48 discrepancy (2026-10-21) | **Resolution mechanism and allocation of the two hours not provided**; record the exact university-approved treatment before final workload accounting; do not assume exam hours are contact hours |
+| Contact hours | Lecturer confirms **48 hours delivered as 16 × 3-hour teaching sessions**; the university allocates **2 additional hours to a certification exam** outside lecturer responsibilities (2026-10-21) | University administers the two-hour certification activity; keep distinct from M5's separate 3-hour written exam and 40 assessment hours in the descriptor. No lecturer deliverable is required for these two hours |
 | Student count | Expected **10 students** | 10 × 10-minute presentations = 100 minutes before questions/changeovers; plan S16 within 180 minutes and confirm timing |
 | Written exam | **On campus**; 3 hours and 60% per descriptor | Exact date/room, invigilation, marking and accommodations still to be scheduled/confirmed |
 | Online teaching platform | **Google Meet** | Institutional LMS (if any), recording/attendance and access policies not provided |
@@ -20,11 +20,14 @@ Nine synchronous online sessions (S01, S03, S05, S07, S09, S11, S13, S14, S15) a
 | Approval details | Decisions supplied by lecturer on **2026-10-21** | Institutional approver name/approval reference not supplied; record if required by university |
 
 ### Open operational points
-- Obtain the **exact approved handling of the additional two contact hours** (even though the university has resolved it), to make the 250-hour allocation auditable.
+- **Resolved:** university allocates the additional two hours to a certification examination outside the lecturer's responsibilities. Its relationship to the descriptor's 40 assessment hours should not be reinterpreted without university guidance.
 - Confirm the learning management system, if one is used, and examination supervision details.
 - Confirm session 16 presentation Q&A/changeover timing and final campus timetable.
 
 No changes to the approved module descriptor or assessment weights are implied.
+
+### Terminology
+LMS means Learning Management System (e.g. Moodle, Canvas or Google Classroom). The university LMS, if any, has not yet been identified; Google Meet is the synchronous class platform, not necessarily the LMS.
 
 ## Tool routing
 - **Codex** (primary): curriculum, evidence-based academic text, structured Word/Markdown, slide drafts, notebooks, solutions in private storage, QA scripts and reusable skills.
