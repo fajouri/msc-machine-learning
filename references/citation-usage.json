@@ -1,4 +1,85 @@
 {
   "issue": 5,
-  "uses": []
+  "uses": [
+    {
+      "source_id": "geron2022",
+      "artifact": "sessions/S01/references.md",
+      "locator": "whole work",
+      "kind": "link",
+      "attribution": "Géron (2022), 3rd ed., publisher listing; whole work",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "Codex, 2026-10-21: primary publisher listing checked; link only."
+    },
+    {
+      "source_id": "goodfellow2016",
+      "artifact": "sessions/S01/references.md",
+      "locator": "§5 Machine Learning Basics (author table of contents)",
+      "kind": "link",
+      "attribution": "Goodfellow, Bengio and Courville (2016), §5 author table of contents",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "Codex, 2026-10-21: primary author site checked; link only."
+    },
+    {
+      "source_id": "hastie2009",
+      "artifact": "sessions/S01/references.md",
+      "locator": "whole work",
+      "kind": "link",
+      "attribution": "Hastie, Tibshirani and Friedman (2009), 2nd ed., publisher record",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "Codex, 2026-10-21: primary publisher/DOI record checked; link only."
+    },
+    {
+      "source_id": "provost2013",
+      "artifact": "sessions/S01/references.md",
+      "locator": "chapter 2 Business Problems and Data Science Solutions (publisher table of contents)",
+      "kind": "link",
+      "attribution": "Provost and Fawcett (2013), chapter 2 publisher table of contents",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "Codex, 2026-10-21: primary publisher listing checked; link only."
+    },
+    {
+      "source_id": "ng2017",
+      "artifact": "sessions/S01/references.md",
+      "locator": "whole work (official landing page; version/year unresolved)",
+      "kind": "link",
+      "attribution": "Ng, Machine Learning Yearning, official landing page; descriptor year unresolved",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "TODO: exact English version/year and professor URL decision; no excerpt reused."
+    },
+    {
+      "source_id": "geron2022",
+      "artifact": "sessions/S01/lecture.md",
+      "locator": "whole work",
+      "kind": "link",
+      "attribution": "Géron (2022), 3rd ed., publisher listing; whole work",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "Codex, 2026-10-21: SL18 reading link; no copied content."
+    },
+    {
+      "source_id": "goodfellow2016",
+      "artifact": "sessions/S01/lecture.md",
+      "locator": "§5 Machine Learning Basics (author table of contents)",
+      "kind": "link",
+      "attribution": "Goodfellow, Bengio and Courville (2016), §5 author table of contents",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "Codex, 2026-10-21: SL18 reading link; no copied content."
+    },
+    {
+      "source_id": "hastie2009",
+      "artifact": "sessions/S01/lecture.md",
+      "locator": "whole work",
+      "kind": "link",
+      "attribution": "Hastie, Tibshirani and Friedman (2009), 2nd ed., publisher record",
+      "rights_status": "link_only",
+      "permission_evidence": "",
+      "review_note": "Codex, 2026-10-21: SL18 reading link; no copied content."
+    }
+  ]
 }

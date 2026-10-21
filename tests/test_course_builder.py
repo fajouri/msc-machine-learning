@@ -27,6 +27,10 @@ class CourseBuilderTests(unittest.TestCase):
             shutil.copytree(ROOT / name, self.root / name,
                             ignore=shutil.ignore_patterns('*.pdf', '__pycache__'))
         shutil.copy2(ROOT / 'AGENTS.md', self.root / 'AGENTS.md')
+        # Package lifecycle fixtures start with no authored sessions. Keep the
+        # copied citation ledger consistent with that disposable repository.
+        (self.root / 'references/citation-usage.json').write_text(
+            json.dumps({'issue': 5, 'uses': []}), encoding='utf-8')
 
     def init(self, selected='S01', package='source'):
         return builder.initialise(self.root, selected, 13, package)
