@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "issue": 13,
+  "session": {
+    "id": "S01",
+    "title": "ML foundations and Python stack",
+    "proposed_mode": "online",
+    "learning_outcomes": [
+      "LO1"
+    ],
+    "indicative_topics": "ML paradigms, workflow, scientific Python",
+    "block_id": "B01",
+    "contact_hours": 3,
+    "self_study": {
+      "hours": 8,
+      "activity": "Compare ML paradigms and justify problem formulations; practise scientific Python with a reproducible environment record.",
+      "status": "proposed"
+    }
+  },
+  "package": "source",
+  "audience": "public_student",
+  "approval": "pending_professor_review",
+  "sources": {
+    "AGENTS.md": "cf2920b2237512e0108c7f376c3669334cbf9ad648e4b56623f78b5144ae36fa",
+    "docs/PRODUCTION_PLAN.md": "d8aa29bcf6d4f684dd5f08fc481c6cbad3ff8a1d0168efd28bffdbef59caec04",
+    "curriculum/session-map.csv": "92b4f9665a376bcca52d08401d974e81e3e1b69c2910367c1a773964f0424b6d",
+    "curriculum/curriculum.json": "0183f76df295b2946b4274c172ed25a89c067aab3ff121118851fd8b7d9a0ded",
+    "curriculum/traceability-matrix.md": "f7cd454ee0ddab06b880ef557337b318c8e99e0b5920fe58790b1757c647b949",
+    "curriculum/traceability-gaps.md": "2aadb591933e25671b40cfdd4e54cb0b50b53974705861bd2b75627bcd6ab863",
+    "docs/delivery-plan.md": "7d38d2c716794716443d97ed53420bfa0a7492a2a37d6f4f41659c55a559dc41",
+    "docs/course-builder-boundary.md": "d90306d77dbaa6db0ecbc4fa81d9b338c84f376ca354ad85e9589f477c212045",
+    "references/bibliography.json": "dc1c3f691700dfd40f8544b98a8ea15ff8fb29e9dcc502cf10d4e7939154a496",
+    "references/README.md": "36967029e8bdaa8cb7e80a7090288e8a9b813cef9ef1ae2803e63c6d97a3449a"
+  },
+  "outputs": [
+    {
+      "path": "brief.md",
+      "sha256": "e310313dd67611e961c3712f08f1e54751de24506c6eb03655ac4c4143af8a80"
+    },
+    {
+      "path": "lecture.md",
+      "sha256": "05735aedd7d4dcfef1f73e52e4c2246d0375ab2d3f751126651e098de591cda1"
+    },
+    {
+      "path": "exercises.md",
+      "sha256": "33311ea6c2fc753e85c4203248af8422b7f3bdf5272e75faae2a504ad426af23"
+    },
+    {
+      "path": "references.md",
+      "sha256": "de9a012fc6e77e904719bb6b0346d1eec6c26cb943ab5b852e064452ce91ac24"
+    },
+    {
+      "path": "completion.md",
+      "sha256": "ed854068ddd670fd66268e4e3184b87ee4fa49a087784256ef80a0a6703ffd81"
+    },
+    {
+      "path": "student-lab.ipynb",
+      "sha256": "2d584efc4514ba2bfc2ebedf8a5bd69de8dff92daaf8b024e4ab494e49047190"
+    }
+  ]
+}
