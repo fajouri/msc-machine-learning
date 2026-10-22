@@ -1,12 +1,12 @@
 # S01 — Source package completion and review record
 
-Issue [#13](https://github.com/fajouri/msc-machine-learning/issues/13), PR [#65](https://github.com/fajouri/msc-machine-learning/pull/65), 2026-10-21. Public student-readable **source draft**, pending professor review. This record grants no release, merge or issue closure.
+Issue [#13](https://github.com/fajouri/msc-machine-learning/issues/13), initial PR [#65](https://github.com/fajouri/msc-machine-learning/pull/65), 2026-10-21. Public student-readable **source draft**, pending professor review. PR #65 was merged during review before these corrections landed; this revision is for a separate follow-up review. This record grants no release or academic approval.
 
 ## Authority and actual artifacts
 
 The hash-pinned approved curriculum supplies MQF Level 7, B01 Foundations and exact LO1 wording. The working map proposes S01 online, and the lecturer reports Google Meet, roughly ten students and Colab permission. The 180-minute timing, cases, diagrams, self-study sequence and formative checks are pedagogical proposals. The approved assessment orientation now explicitly names the three-hour written exam (60%), class-internal Kaggle capstone with final model/leaderboard evidence and technical report (30%), and ten-minute presentation (10%). It introduces no project subweight, rubric or new assessed activity. The topic sequence and 48 teaching hours plus separate two-hour university certification allocation are unchanged.
 
-The course-builder preflight was run first: python -s skills/msc-course-builder/scripts/session_package.py plan --session S01 --issue 13 (exit 0). It verified required input hashes and identified the six source-package outputs. The four declared issues were read through GitHub API: SETUP-02 #2, AUTO-01 #7, AUTO-02 #8 and AUTO-03 #9 are closed; #13 remains open with zero comments. Closure is task provenance, not professor approval. Curriculum/traceability, delivery, bibliography, lecture-template and notebook-template contracts were read.
+The course-builder preflight was run first: python -s skills/msc-course-builder/scripts/session_package.py plan --session S01 --issue 13 (exit 0). It verified required input hashes and identified the six source-package outputs. The four declared issues were read through GitHub API: SETUP-02 #2, AUTO-01 #7, AUTO-02 #8 and AUTO-03 #9 are closed; #13 was open with zero comments at initial preflight and was later auto-closed when PR #65 merged. Closure is task provenance, not professor approval. Curriculum/traceability, delivery, bibliography, lecture-template and notebook-template contracts were read.
 
 | File | Content and status |
 | --- | --- |
