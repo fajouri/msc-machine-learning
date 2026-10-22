@@ -1,0 +1,3 @@
+sessions/S01/*.md text eol=lf
+sessions/S01/*.ipynb text eol=lf
+sessions/S01/manifest.json text eol=lf
