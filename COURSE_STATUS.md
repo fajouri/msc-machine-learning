@@ -5,7 +5,8 @@ Updated 28 October 2026. This is the simple working checklist; it does **not** c
 | Session | Current visible material | Next check |
 | --- | --- | --- |
 | S01 | Existing brief, lecture, exercises, references, Colab lab, completion record and manifest | Confirm professor review; verify editable slides and student release |
-| S02–S16 | Detailed session allocation in curriculum files | Prepare materials one session at a time |
+| S02 | README, detailed lecture, 17-slide Markdown source, exercises and Colab notebook created | Run Colab end-to-end, produce/edit PPTX, professor review before student release |
+| S03–S16 | Detailed session allocation in curriculum files | Prepare materials one session at a time |
 
 ## Governance
 
