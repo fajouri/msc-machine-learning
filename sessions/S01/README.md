@@ -8,6 +8,8 @@
 - [Detailed lecture](lecture.md)
 - [Exercises](exercises.md)
 - [Student Colab notebook](student-lab.ipynb)
+- [Beginner email spam/ham classifier (Colab)](email-spam-classifier.ipynb) — guided labeled-data → TF-IDF → logistic regression → prediction example
+- [Synthetic emails CSV](email-spam-example.csv) — 24 labeled practice messages
 - [References](references.md)
 - [Historical completion and review evidence](completion.md)
 
