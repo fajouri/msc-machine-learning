@@ -53,4 +53,4 @@ LMS means Learning Management System (e.g. Moodle, Canvas or Google Classroom). 
 ## Sequence
 Phase A: approvals and course architecture → Phase B: skills/templates/CI → Phase C: two pilots (S01 online and S02 campus) → Phase D: remainder batches → Phase E: assessment packages and release validation.
 
-Board: https://github.com/users/fajouri/projects/6/views/1
+Historical production planning only. Current course workflow is defined in `course-plan.md` and `COURSE_STATUS.md`; no Project Board or pull request is required.
