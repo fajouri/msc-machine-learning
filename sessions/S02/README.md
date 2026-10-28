@@ -20,7 +20,7 @@ By the end, students should be able to (1) audit a dataset and explain missingne
 | 155–175 | Independent modification, leakage critique, explain design choices |
 | 175–180 | Exit ticket and S03 preview |
 
-**Materials:** [lecture](lecture.md) · [slides source + speaker prompts](slides.md) · [exercises](exercises.md) · [Colab lab](student-lab.ipynb).
+**Materials:** [lecture](lecture.md) · [slides source](slides.md) · [read-aloud speaker script](speaker-script.md) · [exercises](exercises.md) · [Colab lab](student-lab.ipynb).
 
 **Requirements:** campus computer with browser/Colab, Python, pandas, NumPy, matplotlib, scikit-learn; no external dataset, credentials, GPU or paid service. The notebook uses synthetic data.
 
