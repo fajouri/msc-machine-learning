@@ -7,6 +7,10 @@
 ## Learning goals
 By the end, students should be able to (1) audit a dataset and explain missingness, (2) clean inconsistent values, duplicates and impossible observations without hiding decisions, (3) distinguish exploratory analysis from fitted preprocessing, (4) use training-only imputation, encoding and scaling with scikit-learn pipelines, and (5) defend a model-ready feature table with appropriate limitations.
 
+## Additional guided tutorial
+
+[AI Subscription Economy — Data Cleaning and EDA](tutorials/01-ai-subscription-data-cleaning/README.md) · [Open notebook](tutorials/01-ai-subscription-data-cleaning/tutorial.ipynb). This tutorial reinforces S01 foundations and S02 preprocessing; it deliberately does not train a predictive model (that begins in S03).
+
 ## Class agenda
 | Minutes | Activity |
 |---|---|
