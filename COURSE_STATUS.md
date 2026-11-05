@@ -1,13 +1,14 @@
 # M5 Machine Learning — course status
 
-Updated 4 November 2026. This is the simple working checklist; it does **not** constitute institutional or professor approval.
+Updated 5 November 2026. This is the simple working checklist; it does **not** constitute institutional or professor approval.
 
 | Session | Current visible material | Next check |
 | --- | --- | --- |
 | S01 | Existing brief, lecture, exercises, references, Colab lab, completion record and manifest | Confirm professor review; verify editable slides and student release |
 | S02 | README, detailed lecture, 17-slide Markdown source, exercises and Colab notebook created | Run Colab end-to-end, produce/edit PPTX, professor review before student release |
 | S03 | README, detailed lecture, 18-slide editable PPTX and source, professor script, exercises, concept notebook and gamified step-by-step tutorial (100 core XP + 20 optional bonus) created | Local notebook execution and XP checks passed; slides rendered and inspected. Check Google Colab behaviour and professor academic review before student release |
-| S04–S16 | Detailed session allocation in curriculum files | Prepare materials one session at a time |
+| S04 | README, detailed lecture, 18-slide source, exercises and student notebook created on master | Execute notebook end-to-end; render and inspect editable PPTX; verify Colab; professor academic review before student release |
+| S05–S16 | Detailed session allocation in curriculum files | Prepare materials one session at a time |
 
 ## Governance
 
