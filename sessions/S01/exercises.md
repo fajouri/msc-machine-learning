@@ -15,7 +15,7 @@ For a live Meet check, each of ten students shares one choice and one assumption
 
 ## B. Guided reproducibility audit
 
-Open student-lab.ipynb, predict the constant model's behaviour before execution, then run all cells in a fresh Python 3 CPU runtime. Record Python version, data version/hash, seed and partition IDs. Explain which rows affect the fitted constant and which only evaluate it. Check whether a rerun matches, and distinguish this evidence of repeatability from evidence of generalisation. Explain why fitting any future transformation on all rows before splitting would invalidate the intended check. The public worked derivation in lecture.md may support the audit; it does not answer the independent tasks below.
+Open student-lab.ipynb, predict the constant model's behaviour before execution, then run all cells in a fresh Python 3 CPU runtime. Record Python, NumPy and pandas versions, data version/hash, seed and partition IDs. Compare the 24×2 NumPy array with the 24×3 pandas DataFrame, select x by position and by name, and interpret the displayed count, mean, minimum and maximum as descriptions of synthetic rows. Explain why row_id does not automatically become a predictive feature and why matching descriptive means do not prove model quality. Then identify which rows affect the fitted constant and which only evaluate it. Check whether a rerun matches, distinguishing repeatability from generalisation. Explain why fitting any future transformation on all rows before splitting would invalidate the intended check. The public worked derivation in lecture.md may support the audit; it does not answer the independent tasks below.
 
 ## C. Independent investigation
 
